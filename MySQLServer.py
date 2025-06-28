@@ -18,36 +18,54 @@
 # GitHub repository: Intro_to_DB
 # File: MySQLServer.py
 
+#!/usr/bin/env python3
+"""
+MySQLServer.py - Database Creation Script
+Creates the alx_book_store database in MySQL server
+"""
+
 import mysql.connector
 from mysql.connector import Error
+
+
 def create_database():
+    """
+    Creates the alx_book_store database if it doesn't exist.
+    Handles connection, creation, and cleanup operations.
+    """
+    connection = None
+    cursor = None
+    
     try:
-        # Establish a connection to the MySQL server
+        # Establish connection to MySQL server
         connection = mysql.connector.connect(
             host='localhost',
-            user='your_username',  # replace with your MySQL username
-            password='your_password'  # replace with your MySQL password
+            user='root',  # Replace with your MySQL username
+            password='your_password'  # Replace with your MySQL password
         )
-
+        
         if connection.is_connected():
             cursor = connection.cursor()
-            # Create the database if it does not exist
+            
+            # Create database if it doesn't exist
             cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             print("Database 'alx_book_store' created successfully!")
-
-    except mysql.connector.Error as e:
-        print(f"Error: {e}")
-
+            
+    except Error as e:
+        print(f"Error while connecting to MySQL: {e}")
+        
     finally:
-        if connection.is_connected():
+        # Ensure proper cleanup of resources
+        if cursor:
             cursor.close()
+        if connection and connection.is_connected():
             connection.close()
-            print("MySQL connection is closed.")
+
+
 def main():
+    """Main function to execute database creation"""
     create_database()
 
+
 if __name__ == "__main__":
-    main()  
-# If this script is run directly, it will execute the main function
-# If imported, the main function will not run automatically
-# This allows the script to be used as a module in other scripts without executing the main function
+    main()
