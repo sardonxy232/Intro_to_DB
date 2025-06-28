@@ -9,5 +9,7 @@
 -- GitHub repository: Intro_to_DB
 -- File: task_3.sql;
 
+USE alx_book_store;
+
 SHOW TABLES;
--- This query retrieves
+-- This query retrieves the list of all tables in the 'alx_book_store' database.
