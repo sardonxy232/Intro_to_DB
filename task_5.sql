@@ -19,7 +19,7 @@
 -- GitHub repository: Intro_to_DB
 -- File: task_5.sql
 
-INSERT INTO Customer(customer_id, customer_name, email, address)
+INSERT INTO customer(customer_id, customer_name, email, address)
 VALUES (1, 'Cole Baidoo', 'cbaidoo@sandtech.com', '123 Happiness Ave.');
 -- Ensure that the data is inserted successfully
 -- You can run this script in your MySQL server to insert the specified data into the Customers table.
