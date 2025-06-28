@@ -25,8 +25,8 @@ def create_database():
         # Establish a connection to the MySQL server
         connection = mysql.connector.connect(
             host='localhost',
-            user='your_username',  # Replace with your MySQL username
-            password='your_password'  # Replace with your MySQL password
+            user='your_username',  # replace with your MySQL username
+            password='your_password'  # replace with your MySQL password
         )
 
         if connection.is_connected():
@@ -35,7 +35,7 @@ def create_database():
             cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             print("Database 'alx_book_store' created successfully!")
 
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Error: {e}")
 
     finally:
@@ -47,13 +47,7 @@ def main():
     create_database()
 
 if __name__ == "__main__":
-    main()          
-
+    main()  
 # If this script is run directly, it will execute the main function
-# If imported, the main function will not run automatically 
-# Note:
-# Ensure to replace 'your_username' and 'your_password' with your actual MySQL credentials
-# This script will create the database alx_book_store if it does not already exist, and it will handle any connection errors gracefully.
-# The script also ensures that the MySQL connection is properly     closed after the operation, preventing any resource leaks.
-# The output will confirm the successful creation of the database or display an error message if the connection fails.
-# This task demonstrates basic database operations in Python using the mysql-connector library, focusing on creating a database and handling exceptions.
+# If imported, the main function will not run automatically
+# This allows the script to be used as a module in other scripts without executing the main function
