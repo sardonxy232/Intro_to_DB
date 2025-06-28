@@ -8,8 +8,6 @@
 
 -- GitHub repository: Intro_to_DB
 -- File: task_3.sql;
-USE alx_book_store;
-SELECT TABLE_NAME
 
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_SCHEMA = 'alx_book_store';
+SHOW TABLES;
+-- This query retrieves
