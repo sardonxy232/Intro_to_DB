@@ -12,10 +12,10 @@
 -- File: task_4.sql
 
 -- task_4.sql must contain: ["INFORMATION_SCHEMA.COLUMNS", "SELECT", "COLUMN_NAME", "COLUMN_TYPE", "TABLE_SCHEMA = 'alx_book_store'", "TABLE_NAME = 'Books'"]
-SELECT COLUMN_NAME, COLUMN_TYPE
+SELECT COLUMN_NAME,COLUMN_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_SCHEMA = 'alx_book_store'
-AND TABLE_NAME = 'Books';
+WHERE TABLE_SCHEMA='alx_book_store'
+AND TABLE_NAME='Books';
 -- This query retrieves the column names and their types from the Books table in the alx_book_store database.
 -- It uses the INFORMATION_SCHEMA.COLUMNS table to get metadata about the columns in the specified table.
 -- The WHERE clause filters the results to only include columns from the Books table in the
